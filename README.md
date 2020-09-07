@@ -24,8 +24,9 @@ The restricted Boltzmann machine (RBM) has received an increasing amount of inte
 
 ### Requirement
 0. Matlab (>=2011)
+0. download datasets
 0. the code is for computation on GPU
-0. A pre-defined graph matrix 'phi' (n x n) is required for all the experiments/datasets. Note if one plays with limited RAM, we suggest computing the neighbourhood graph (vector) progressively, i.e., init each column of 'phi' associated to each sample and ultimately get the whole 'phi'.
+0. a pre-defined graph matrix 'phi' (n x n) is required for all the experiments/datasets. Note if one plays with limited RAM, we suggest computing the neighbourhood graph (vector) progressively, i.e., init each column of 'phi' associated to each sample and ultimately get the whole 'phi' (matrix).
 
 ### Usage
 0. run [main.m](https://github.com/edongdongchen/GraphRBM/blob/master/main.m) to start a simple example.
@@ -36,7 +37,7 @@ The restricted Boltzmann machine (RBM) has received an increasing amount of inte
 
 If you find the code is useful or use these models in your research, please consider to cite:
 
-	@article{chen2018graph,
+    @article{chen2018graph,
     title={Graph regularized restricted Boltzmann machine},
     author={Chen, Dongdong and Lv, Jiancheng and Yi, Zhang},
     journal={IEEE transactions on neural networks and learning systems},
@@ -45,4 +46,4 @@ If you find the code is useful or use these models in your research, please cons
     pages={2651--2659},
     year={2018},
     publisher={IEEE}
-  }
+    }
