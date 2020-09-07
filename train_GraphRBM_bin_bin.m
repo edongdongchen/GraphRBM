@@ -1,19 +1,19 @@
 function [rbm, currentH] = train_GraphRBM_bin_bin(x, nHid, opts)
 % Graph regularized Restricted Boltzmann Machine (GraphRBM, binary input&output).
-% With GPU Acceleration & Optimization (optional)
+% With GPU Acceleration (optional)
 % input:
-% x           -   nSmp x nDim data matrix (training data)
+% x        -   nSmp x nDim data matrix (training data)
 % nHid     -   1x1  dimension of hidden layer
-% opts      -   parameters
+% opts     -   parameters
 %
 % output:
-% rbm           -  struct
+% rbm       -  struct
 % currentH  -  representation of x
 %---------------------------------------------------------------------------------------------------
 % TNNLS-2018 paper: Graph regularized Restricted Boltzmann Machine
 %---------------------------------------------------------------------------------------------------
-%   version 2.0 --Oct/2016
-%   version 1.0 --Feb/2016
+%   version 2.0 -- Oct/2016
+%   version 1.0 -- Feb/2016
 %
 %   Written by Dongdong Chen AT Sichuan University
 %   Email: dongdongchen.scu@gmail.com
@@ -35,8 +35,8 @@ function [rbm, currentH] = train_GraphRBM_bin_bin(x, nHid, opts)
     end
     % structs for gradients
     grad = replicate_struct(rbm, 0);
-    pos   = replicate_struct(rbm, 0);
-    neg   = replicate_struct(rbm, 0);
+    pos  = replicate_struct(rbm, 0);
+    neg  = replicate_struct(rbm, 0);
 
     phi = opts.GraphPhi;
     currentH = zeros(nSmp, nH);
@@ -118,7 +118,6 @@ function [rbm, currentH] = train_GraphRBM_bin_bin(x, nHid, opts)
         history.recon_err = [history.recon_err, gather(sum(recon_err_epoch))/numbatches];
 
         if opts.visLearning
-            %index = [2, 22];%
             index = opts.uiindex;
             ShowLearning(1, i, part1, -part2, x, currentH, recon_data, index, history.recon_err, opts.uirow, opts.uicol);
             if i ==10%opts.numepochs
