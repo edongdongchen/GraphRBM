@@ -35,7 +35,7 @@ The restricted Boltzmann machine (RBM) has received an increasing amount of inte
 
 ### Citation
 
-If you find the code is useful or use these models in your research, please consider to cite:
+If you find the codes are useful or used the codes in your research, it is appreciated if you cite:
 
     @article{chen2018graph,
     title={Graph regularized restricted Boltzmann machine},
