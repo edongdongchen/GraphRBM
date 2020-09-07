@@ -24,7 +24,7 @@ The restricted Boltzmann machine (RBM) has received an increasing amount of inte
 
 ### Requirement
 0. Matlab (>=2011)
-0. download datasets
+0. download the datasets (COIL20, MNIST, etc.)
 0. the code is for computation on GPU
 0. a pre-defined graph matrix 'phi' (n x n) is required for all the experiments/datasets. Note if one plays with limited RAM, we suggest computing the neighbourhood graph (vector) progressively, i.e., init each column of 'phi' associated to each sample and ultimately get the whole 'phi' (matrix).
 
